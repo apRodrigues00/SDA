@@ -25,15 +25,21 @@
 # Loading work.datapath_vlg_sample_tst
 # Loading work.datapath_vlg_check_tst
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
-# ERROR! Vector Mismatch for output port data_out[1] :: @time = 20000.000 ps
+# ERROR! Vector Mismatch for output port data_out[1] :: @time = 60000.000 ps
 #      Expected value = 00000000000000000000000000000000
 #      Real value = 00000000000000000000000000001010
-# ERROR! Vector Mismatch for output port data_out[3] :: @time = 20000.000 ps
+# ERROR! Vector Mismatch for output port data_out[3] :: @time = 60000.000 ps
 #      Expected value = 00000000000000000000000000000000
 #      Real value = 00000000000000000000000000001010
-# ERROR! Vector Mismatch for output port data_out[2] :: @time = 30000.000 ps
+# ERROR! Vector Mismatch for output port data_out[2] :: @time = 140000.000 ps
 #      Expected value = 00000000000000000000000000000000
 #      Real value = 00000000000000000000000000001100
-#           3 mismatched vectors : Simulation failed !
-# ** Note: $finish    : ula.vt(829)
+# ERROR! Vector Mismatch for output port data_out[4] :: @time = 220000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000000000000000000000000010110
+# ERROR! Vector Mismatch for output port data_out[5] :: @time = 300000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000000000000000000000000101100
+#           5 mismatched vectors : Simulation failed !
+# ** Note: $finish    : ula.vt(833)
 #    Time: 1 us  Iteration: 0  Instance: /datapath_vlg_vec_tst/tb_out

@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "11/29/2023 19:37:30"
+// Generated on "11/30/2023 14:24:53"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    datapath
 // 
@@ -319,12 +319,16 @@ end
 initial
 begin
 	N_expected = 1'bX;
+	N_expected = #340000 1'b0;
+	N_expected = #250000 1'bX;
 end 
 
 // expected ov
 initial
 begin
 	ov_expected = 1'bX;
+	ov_expected = #340000 1'b0;
+	ov_expected = #250000 1'bX;
 end 
 
 // expected Z
@@ -877,11 +881,15 @@ begin
 end 
 
 // clock
-always
+initial
 begin
+	repeat(12)
+	begin
+		clock = 1'b0;
+		clock = #40000 1'b1;
+		# 40000;
+	end
 	clock = 1'b0;
-	clock = #5000 1'b1;
-	#5000;
 end 
 // data_in[ 31 ]
 initial
@@ -1022,27 +1030,37 @@ end
 initial
 begin
 	data_in[4] = 1'b0;
+	data_in[4] = #410000 1'b1;
+	data_in[4] = #50000 1'b0;
 end 
 // data_in[ 3 ]
 initial
 begin
 	data_in[3] = 1'b0;
-	data_in[3] = #10000 1'b1;
-	data_in[3] = #20000 1'b0;
+	data_in[3] = #20000 1'b1;
+	data_in[3] = #40000 1'b0;
+	data_in[3] = #40000 1'b1;
+	data_in[3] = #40000 1'b0;
+	data_in[3] = #270000 1'b1;
+	data_in[3] = #50000 1'b0;
 end 
 // data_in[ 2 ]
 initial
 begin
 	data_in[2] = 1'b0;
-	data_in[2] = #20000 1'b1;
-	data_in[2] = #10000 1'b0;
+	data_in[2] = #100000 1'b1;
+	data_in[2] = #40000 1'b0;
+	data_in[2] = #270000 1'b1;
+	data_in[2] = #50000 1'b0;
 end 
 // data_in[ 1 ]
 initial
 begin
 	data_in[1] = 1'b0;
-	data_in[1] = #10000 1'b1;
-	data_in[1] = #10000 1'b0;
+	data_in[1] = #20000 1'b1;
+	data_in[1] = #40000 1'b0;
+	data_in[1] = #350000 1'b1;
+	data_in[1] = #50000 1'b0;
 end 
 // data_in[ 0 ]
 initial
@@ -1054,8 +1072,18 @@ end
 initial
 begin
 	enable = 1'b0;
-	enable = #10000 1'b1;
-	enable = #30000 1'b0;
+	enable = #20000 1'b1;
+	enable = #50000 1'b0;
+	enable = #30000 1'b1;
+	enable = #40000 1'b0;
+	enable = #40000 1'b1;
+	enable = #40000 1'b0;
+	enable = #40000 1'b1;
+	enable = #40000 1'b0;
+	enable = #40000 1'b1;
+	enable = #40000 1'b0;
+	enable = #40000 1'b1;
+	enable = #40000 1'b0;
 end 
 // read_Reg1[ 4 ]
 initial
@@ -1071,18 +1099,28 @@ end
 initial
 begin
 	read_Reg1[2] = 1'b0;
+	read_Reg1[2] = #420000 1'b1;
+	read_Reg1[2] = #40000 1'b0;
 end 
 // read_Reg1[ 1 ]
 initial
 begin
 	read_Reg1[1] = 1'b0;
+	read_Reg1[1] = #420000 1'b1;
+	read_Reg1[1] = #40000 1'b0;
+	read_Reg1[1] = #40000 1'b1;
+	read_Reg1[1] = #40000 1'b0;
 end 
 // read_Reg1[ 0 ]
 initial
 begin
 	read_Reg1[0] = 1'b0;
-	read_Reg1[0] = #20000 1'b1;
-	read_Reg1[0] = #10000 1'b0;
+	read_Reg1[0] = #90000 1'b1;
+	read_Reg1[0] = #50000 1'b0;
+	read_Reg1[0] = #280000 1'b1;
+	read_Reg1[0] = #40000 1'b0;
+	read_Reg1[0] = #40000 1'b1;
+	read_Reg1[0] = #40000 1'b0;
 end 
 // read_Reg2[ 4 ]
 initial
@@ -1103,33 +1141,43 @@ end
 initial
 begin
 	read_Reg2[1] = 1'b0;
+	read_Reg2[1] = #340000 1'b1;
+	read_Reg2[1] = #40000 1'b0;
 end 
 // read_Reg2[ 0 ]
 initial
 begin
 	read_Reg2[0] = 1'b0;
-	read_Reg2[0] = #30000 1'b1;
-	read_Reg2[0] = #10000 1'b0;
+	read_Reg2[0] = #170000 1'b1;
+	read_Reg2[0] = #50000 1'b0;
 end 
 
 // sel_mux
 initial
 begin
 	sel_mux = 1'b0;
-	sel_mux = #30000 1'b1;
-	sel_mux = #30000 1'b0;
+	sel_mux = #180000 1'b1;
+	sel_mux = #40000 1'b0;
+	sel_mux = #40000 1'b1;
+	sel_mux = #40000 1'b0;
+	sel_mux = #40000 1'b1;
+	sel_mux = #40000 1'b0;
 end 
 // ula_funct[ 2 ]
 initial
 begin
 	ula_funct[2] = 1'b0;
+	ula_funct[2] = #340000 1'b1;
+	ula_funct[2] = #40000 1'b0;
 end 
 // ula_funct[ 1 ]
 initial
 begin
 	ula_funct[1] = 1'b0;
-	ula_funct[1] = #30000 1'b1;
-	ula_funct[1] = #10000 1'b0;
+	ula_funct[1] = #180000 1'b1;
+	ula_funct[1] = #40000 1'b0;
+	ula_funct[1] = #40000 1'b1;
+	ula_funct[1] = #40000 1'b0;
 end 
 // ula_funct[ 0 ]
 initial
@@ -1150,18 +1198,28 @@ end
 initial
 begin
 	write_Reg[2] = 1'b0;
+	write_Reg[2] = #420000 1'b1;
+	write_Reg[2] = #40000 1'b0;
 end 
 // write_Reg[ 1 ]
 initial
 begin
 	write_Reg[1] = 1'b0;
+	write_Reg[1] = #340000 1'b1;
+	write_Reg[1] = #40000 1'b0;
+	write_Reg[1] = #40000 1'b1;
+	write_Reg[1] = #40000 1'b0;
 end 
 // write_Reg[ 0 ]
 initial
 begin
 	write_Reg[0] = 1'b0;
-	write_Reg[0] = #20000 1'b1;
-	write_Reg[0] = #10000 1'b0;
+	write_Reg[0] = #100000 1'b1;
+	write_Reg[0] = #40000 1'b0;
+	write_Reg[0] = #200000 1'b1;
+	write_Reg[0] = #40000 1'b0;
+	write_Reg[0] = #40000 1'b1;
+	write_Reg[0] = #40000 1'b0;
 end 
 
 datapath_vlg_sample_tst tb_sample (

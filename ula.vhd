@@ -27,7 +27,7 @@ begin
         elsif sel = "001" then s <= a or b;
 		  elsif sel = "010" then s <= resultado;
 		  elsif sel = "011" then s <= resultado;
-		  elsif sel = "100" then s <= a xor (not (b));
+		  elsif sel = "100" then s <= a xor (b);
 		  elsif sel = "101" then s <= not (b);
 		  elsif sel = "110" then s <= b;
 		  elsif sel = "111" then s <= a nand b;

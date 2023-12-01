@@ -24,7 +24,7 @@ BEGIN
 
 G1:  FOR i IN 0 TO N-1 GENERATE
 		SCs: somador PORT MAP (
-			cin_temp(i), a(i), b(i) xor cin_temp(i), s(i), cin_temp(i+1)
+			cin_temp(i), a(i), b(i) xor cin_temp(0), s(i), cin_temp(i+1)
 		);
 	  END GENERATE;
 
